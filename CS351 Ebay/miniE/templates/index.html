@@ -1,0 +1,54 @@
+$def with (display, form)
+
+<style>
+body {
+        background-image: url("http://destinationheritage.org/wp-content/upload\
+s/2015/09/6809725-simple-vintage-backgrounds.jpg");
+}
+</style>
+<table>
+    <tr>
+      <h1><center>Mini-Ebay</center></h1>
+      <center> <a href="/newPost">Post New Listing</a></center>
+      <center> <a href="/setDate">Set Time and Date</a> </center>
+
+    </tr>
+</table>
+
+<center>
+<form action = "" method="post">
+$:form.render()
+<input type="submit"/>
+</form>
+</center>
+
+
+<table style="width:100%">
+	<tr>
+   		<th> <font size="4">Search Result:</font></th>
+   		<th></th>
+ 	</tr>
+	<tr>
+		<th>ID</th>
+		<th>Category</th>
+		<th>Title</th>
+		<th>Description</th>
+		<th>Price</th>
+		<th>Open</th>
+		<th>End Date</th>
+	</tr>
+	$for D in display:
+	<tr>
+		<td>$D.id</td>
+		<td>$D.category</td>
+		<td>$D.title</td>
+		<td>$D.description</td>
+		<td>$D.price</td>
+		<td>$D.open</td>
+		<td>$D.end_date</td>
+		<td><a href="/viewItem/$D.id">View Listing</a></td>
+
+	</tr>
+	
+</table>
+

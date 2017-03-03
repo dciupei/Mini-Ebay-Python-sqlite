@@ -1,0 +1,28 @@
+$def with (form2, currTime)
+
+
+<head>
+<style>
+	body {background-color:lightgrey;}
+	h1   {color:black;}
+	#menu {
+		width: 200px;
+		float: right;
+	}
+</style>
+</head>
+<body>
+
+	<h1>Date And Time Settings </h1>
+
+ 	<ul id="menu">
+	<li><font size= "5"><a href="/">Home</a></font></li>
+	</ul>
+
+<form name="setDate" action='/setDate'  method="post">
+$:form2.render()
+<input type="submit"/>
+</form>
+
+<h1>Current Date/Time: $currTime</h1>
+</body>

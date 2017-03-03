@@ -1,0 +1,67 @@
+$def with (D, id, bids, form)
+
+<style>
+
+body{
+  /*background-color: rgb(255, 213, 154)*/
+  background-image: url("http://destinationheritage.org/wp-content/upload\
+s/2015/09/6809725-simple-vintage-backgrounds.jpg");
+}
+
+</style>
+
+<center><th><b><font size= "6"><u>$D.title</u></font></b></th></center>
+
+<table style="width:100%">
+  <tr>
+    <td><font size= "5"><b>ID</b></font></td>
+    <td><font size= "5"><b>Category</b></font></td>
+    <td><font size= "5"><b>Description</b></font></td>
+    <td><font size= "5"><b>Price</b></font></td>
+    <td><font size= "5"><b>Open</b></font></td>
+    <td><font size= "5"><b>End Date</b></font></td>
+    <td><font size= "5"><a href="/">Home</a></font></td>
+  </tr>    
+  <tr>
+    <td><font size= "5">$D.id</font></td>
+    <td><font size= "5">$D.category</font></td>
+    <td><font size= "5">$D.description</font></td>
+    <td><font size= "5">$D.price</font></td>
+    <td><font size= "5">$D.open</font></td>
+    <td><font size= "5">$D.end_date</font></td>
+
+  </tr>
+</table>
+
+<p>
+  <br></br>
+</p>
+
+
+  $if D.open == 1:
+    <td><font size= "5"><b>Place a bid on $D.title:</b></font></td>
+    <form action="" method="post">
+    $:form.render()
+    <input type="submit"/>  
+    </form>
+
+  $else:
+    $if D.winner:
+      <center><td><b><font size= "6", color="green">WINNER: $D.winner!</font></b></td></center>
+
+<th><br><font size= "5"><b>Bids:</b></font></br></th>
+
+<table style="width:100%">
+  <tr>
+    <td><b>Buyer</b></td>
+    <td><b>Price</b></td>
+    <td><b>Time</b></td>
+  </tr>    
+$for bid in bids:
+  <tr>
+    <td>$bid.buyer</td>
+    <td>$bid.price</td>
+    <td>$bid.bid_time</td>
+  </tr>    
+</table>
+

@@ -1,0 +1,20 @@
+$def with (form)
+
+<style>
+body {
+        background-image: url("http://destinationheritage.org/wp-content/upload\
+s/2015/09/6809725-simple-vintage-backgrounds.jpg");
+}
+</style>
+<table>
+    <tr>
+      <h1><center>Mini-Ebay</center></h1>
+      <center> <a href="newPost.html"'>Post New Listing</a></center>
+      <center> <a href="url">Set Time and Date</a> </center>
+
+    </tr>
+</table>
+
+<center>
+$:form.render()
+</center>
